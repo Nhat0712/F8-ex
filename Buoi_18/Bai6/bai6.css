@@ -1,0 +1,23 @@
+#chessboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px; 
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 50px; 
+    height: 50px; 
+    border: 1px solid #000;
+}
+
+.even {
+    background-color: #769656;
+}
+
+.odd {
+    background-color: #EEEED2;
+}
