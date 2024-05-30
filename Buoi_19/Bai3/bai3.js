@@ -106,4 +106,4 @@ function numberWord(n) {
     return result;
   }
   
-document.write(numberWord(prompt("Hãy nhập vào số cần chuyển đổi")));
+console.log(numberWord(prompt("Hãy nhập vào số cần chuyển đổi")));

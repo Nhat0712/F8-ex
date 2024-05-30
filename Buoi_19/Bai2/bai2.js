@@ -8,4 +8,4 @@ function reverseNumber(n) {
     return memo;
   }
   
-document.write(reverseNumber(prompt("Nhập vào dãy số cần đảo ngược"))); 
+console.log(reverseNumber(prompt("Nhập vào dãy số cần đảo ngược"))); 
