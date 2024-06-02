@@ -1,19 +1,32 @@
-var textElement = document.getElementById("text");
-var originalText = textElement.innerText;
-var currentIndex = 0;
+function highlight() {
+  const textElement = document.getElementById("text");
+  let current = 0;
 
-function highlightWord() {
-  var startIndex = originalText.indexOf(" ", currentIndex);
-  var endIndex = (startIndex === -1) ? originalText.length : startIndex;
-  var currentWord = originalText.substring(currentIndex, endIndex);
-  var newText = originalText.replace(
-    currentWord,
-    `<span class="highlight">${currentWord}</span>`
-  );
-  textElement.innerHTML = newText;
-  currentIndex = startIndex === -1 ? 0 : endIndex + 1;
+  function highlightText() {
+    const text = textElement.innerText;
+    let wordStart = current;
+    let wordEnd = text.indexOf(" ", current);
+    if (wordEnd === -1) {
+      wordEnd = text.length;
+    }
+    const newText =
+      text.substring(0, wordStart) +
+      "<span> " +
+      text.substring(wordStart, wordEnd) +
+      " </span>" +
+      text.substring(wordEnd);
+
+    textElement.innerHTML = newText;
+    setTimeout(() => {
+      current = wordEnd + 1;
+      if (current >= text.length) {
+        current = 0;
+      }
+      highlightText();
+    }, 200);
+  }
+
+  highlightText();
 }
-setInterval(highlightWord, 500);
 
-
-
+highlight();
