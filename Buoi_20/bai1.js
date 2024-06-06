@@ -6,6 +6,7 @@ function highlight() {
     const text = textElement.innerText;
     let wordStart = current;
     let wordEnd = text.indexOf(" ", current);
+    console.log(wordEnd);
     if (wordEnd === -1) {
       wordEnd = text.length;
     }
