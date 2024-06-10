@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("git add .DOMContentLoaded", function() {
     var posts = [
         {
             title: "Tiêu đề bài viết 1",
@@ -44,5 +44,3 @@ document.addEventListener("DOMContentLoaded", function() {
         contentDiv.appendChild(postDiv);
     });
 });
-
-// Bài này em tham khảo chat GPT gần hết =))
