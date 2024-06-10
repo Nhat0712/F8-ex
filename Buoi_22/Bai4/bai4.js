@@ -1,5 +1,5 @@
-document.addEventListener("git add .DOMContentLoaded", function() {
-    var posts = [
+document.addEventListener("DOMContentLoaded", function() {
+    const posts = [
         {
             title: "Tiêu đề bài viết 1",
             content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat dolores ea quas possimus non! Corrupti quae nesciunt ipsam suscipit eum quam repellendus dolores harum sit, laudantium delectus quisquam amet atque.",
@@ -17,22 +17,22 @@ document.addEventListener("git add .DOMContentLoaded", function() {
         }
     ];
 
-    var contentDiv = document.getElementById('content');
+    const contentDiv = document.getElementById('content');
 
     posts.forEach(post => {
-        var postDiv = document.createElement('div');
+        const postDiv = document.createElement('div');
         postDiv.classList.add('post');
 
-        var img = document.createElement('img');
+        const img = document.createElement('img');
         img.src = post.imageUrl;
         img.alt = post.title;
 
-        var textDiv = document.createElement('div');
+        const textDiv = document.createElement('div');
 
-        var title = document.createElement('h2');
+        const title = document.createElement('h2');
         title.innerText = post.title;
 
-        var content = document.createElement('p');
+        const content = document.createElement('p');
         content.innerText = post.content;
 
         textDiv.appendChild(title);
