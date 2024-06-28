@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!errorMessage) {
           errorMessage = document.createElement("div");
           errorMessage.className = "error-message";
-          errorMessage.textContent = "Vui lòng nhập thông tin";
+          errorMessage.innerHTML = "<i>Vui lòng nhập thông tin</i>";
           errorMessage.style.position = "absolute";
-          errorMessage.style.color = "red";
-          errorMessage.style.fontSize = "12px";
+          errorMessage.style.color = "#CD3038";
+          errorMessage.style.fontSize = "14px";
           errorMessage.style.top = `${
             input.offsetTop + input.offsetHeight + 5
           }px`;
