@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #login-btn {
+    color: #808080;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px auto 0;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+  #login-btn i {
+    margin-right: 10px;
+  }
+  
+  #login-btn:hover {
+    background-color: rgb(208, 208, 208);
+    color: white;
+  }
+  /* end login-btn-out */
+  
+  .container {
+    width: 100%;
+    position: absolute;
+    top: 3vh;
+    display: none;
+  }
+  
+  #toggle:checked ~ .container {
+    display: block;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding-top: 10%;
+  }
+  
+  #toggle:checked ~ .container .overlay {
+    display: block;
+  }
+  /* end  overlay */
+  
+  .tab {
+    background-color: white;
+    width: 30%;
+    height: 95vh;
+    border: 1px solid black;
+    position: relative;
+    transform: translateX(115%);
+  }
+  
+  .tab .logo {
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tab .logo .close {
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+  }
+  
+  .tab .logo a img {
+    width: 145px;
+  }
+  /* end logo */
+  
+  .tab .login-tab,
+  .tab .register-tab {
+    color: grey;
+    width: 49%;
+    height: 60px;
+    padding: 20px 10px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+  
+  .tab #login-tab:checked ~ .login-tab,
+  .tab #register-tab:checked ~ .register-tab {
+    background-color: rgba(26, 121, 0, 1);
+    color: white;
+  }
+  
+  /* end btn tab */
+  .tab .form-login {
+    padding: 30px;
+  }
+  
+  #register-tab:checked ~ .form-login {
+    display: none;
+  }
+  .tab .form-login p {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .tab .form-login p:nth-child(3) {
+    margin-top: 30px;
+  }
+  
+  .tab .form-login nav {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+  }
+  
+  .tab .form-login nav a {
+    color: #333;
+    background-color: #e2e8f0;
+    font-size: 14px;
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+  }
+  
+  /* end form-login nav */
+  .tab .form-login .form-login-tab {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tab .form-login .form-login-tab label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .tab .form-login .form-login-tab input {
+    font-size: 14px;
+    padding: 20px;
+    border: 1px solid rgb(207, 207, 207);
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  /*  */
+  
+  .tab .form-login .form-login-tab .password-login input,
+  .tab .form-register .form-register-tab .password-register input {
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .tab .form-login .form-login-tab .password-login,
+  .tab .form-register .form-register-tab .password-register {
+    position: relative;
+  }
+  
+  .tab .form-login .form-login-tab .password-login .vision,
+  .tab .form-register .form-register-tab .password-register .vision {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tab .form-login .form-login-tab .password-login .vision .fa-eye-slash,
+  .tab
+    .form-register
+    .form-register-tab
+    .password-register
+    .vision
+    .fa-eye-slash {
+    display: none;
+  }
+  
+  .tab
+    .form-login
+    .form-login-tab
+    .password-login
+    .vision
+    #vision-login:checked
+    ~ label
+    .fa-eye-slash,
+  .tab
+    .form-register
+    .form-register-tab
+    .password-register
+    .vision
+    #vision-register:checked
+    ~ label
+    .fa-eye-slash {
+    display: block;
+  }
+  
+  .tab
+    .form-login
+    .form-login-tab
+    .password-login
+    .vision
+    #vision-login:checked
+    ~ label
+    .fa-eye,
+  .tab
+    .form-register
+    .form-register-tab
+    .password-register
+    .vision
+    #vision-register:checked
+    ~ label
+    .fa-eye {
+    display: none;
+  }
+  
+  /* end passwword login */
+  .tab .form-login .form-login-tab input:focus {
+    outline: none;
+  }
+  
+  .tab .form-login .form-login-tab a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 17.5px;
+    text-align: right;
+  }
+  
+  .tab .form-login .form-login-tab .btn-login {
+    color: white;
+    background-color: rgba(26, 121, 0, 1);
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  /* end form-login */
+  
+  .tab .form-register {
+    padding: 30px;
+    display: none;
+  }
+  #register-tab:checked ~ .form-register {
+    display: block;
+  }
+  .tab .form-register p {
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  .tab .form-register .form-register-tab {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tab .form-register .form-register-tab label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .tab .form-register .form-register-tab input {
+    font-size: 14px;
+    padding: 20px;
+    border: 1px solid rgb(207, 207, 207);
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .tab .form-register .form-register-tab input:focus {
+    outline: none;
+  }
+  
+  .tab .form-register p a {
+    color: #2361ff;
+    text-decoration: none;
+  }
+  
+  .tab .form-register .btn-register {
+    color: white;
+    background-color: rgba(26, 121, 0, 1);
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* end form register */
+  
+  /*  */
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
