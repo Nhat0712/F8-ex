@@ -7,34 +7,43 @@ btnAdd.addEventListener("click", function () {
   var task = document.createElement("li");
   var contentTask = document.createElement("p");
   var fixTask = document.createElement("div");
-  var newContent = '<i class="fa-regular fa-pen-to-square update"></i>';
-  newContent += '<i class="fa-solid fa-trash delete"></i>';
+  var btnUpdate = document.createElement("i");
+  var btnDelete = document.createElement("i");
+
+  // thiết lập nội dung và thuộc tính
+  btnUpdate.classList.add("fa-regular", "fa-pen-to-square", "update");
+  btnDelete.classList.add("fa-solid", "fa-trash", "delete");
   var memo = todoAdd.value;
-  // gán
-  fixTask.innerHTML = newContent;
+
+  // gán nội dung và thuộc tính
+  fixTask.appendChild(btnUpdate);
+  fixTask.appendChild(btnDelete);
   fixTask.style.display = "flex";
   fixTask.style.gap = "10px";
   task.appendChild(contentTask);
   task.appendChild(fixTask);
   contentTask.textContent = todoAdd.value;
-  // check chuỗi trống
+
+  // kiểm tra chuỗi trống
   if (todoAdd.value.trim() === "") {
-    console.log(alert("Vui lòng nhập lại công việc"));
+    alert("Vui lòng nhập lại công việc");
     todoAdd.value = "";
   } else {
     taskList.appendChild(task);
-    // btn Delete
-    var btnDelete = document.querySelector(".delete");
+
+    // nút Xóa
     btnDelete.addEventListener("click", function () {
       task.remove();
     });
-    // btn Update
-    var btnUpdate = document.querySelector(".update");
+
+    // nút Sửa
     btnUpdate.addEventListener("click", function () {
       var contentUpdate = document.createElement("input");
       var btnAddUpdate = document.createElement("button");
       btnAddUpdate.textContent = "Add Task";
       contentUpdate.value = memo;
+
+      // gán nội dung và thuộc tính khi sửa
       task.appendChild(contentUpdate);
       task.appendChild(btnAddUpdate);
       contentTask.remove();
@@ -43,6 +52,7 @@ btnAdd.addEventListener("click", function () {
       contentUpdate.placeholder = "Update task";
       contentUpdate.classList.add("contentUpdate");
       btnAddUpdate.classList.add("btnAddUpdate");
+
       btnAddUpdate.addEventListener("click", function () {
         task.appendChild(contentTask);
         task.appendChild(fixTask);
@@ -53,6 +63,7 @@ btnAdd.addEventListener("click", function () {
         memo = contentUpdate.value;
       });
     });
+
     // reset input todo
     todoAdd.value = "";
   }
