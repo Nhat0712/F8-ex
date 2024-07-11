@@ -1,0 +1,26 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.cart-table,
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart-table th,
+.cart-table td,
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.cart-table th,
+.product-table th {
+  background-color: #f2f2f2;
+}
+.cart-controls {
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
