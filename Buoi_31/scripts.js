@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartTotalElement = document.getElementById("cartTotal");
   const clearCartButton = document.getElementById("clearCart");
   const updateCartButton = document.getElementById("updateCart");
+  const report = document.querySelector(".report");
   const cart = {};
 
   function addToCart(productName, productPrice, quantity) {
@@ -81,8 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (Object.keys(cart).length > 0) {
       cartContainer.classList.remove("hidden");
+      report.classList.add('hidden');
     } else {
       cartContainer.classList.add("hidden");
+      report.classList.remove("hidden");
+
     }
   }
 
