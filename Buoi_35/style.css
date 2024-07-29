@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  background-color: #03bdf0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container h1 {
+  color: #fff;
+}
+
+.container .count {
+  color: #fff;
+  background-color: orange;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.get-link {
+  color: grey;
+  background-color: #b5b5b5;
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  cursor: not-allowed;
+}
